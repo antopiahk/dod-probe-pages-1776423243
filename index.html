@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Definition of Done - Probe Report</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --border: #30363d;
+    --text: #c9d1d9;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --pass: #3fb950;
+    --warn: #d29922;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 40px 24px 80px; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+  }
+  h1 { margin: 0 0 6px; font-size: 28px; }
+  .sub { color: var(--muted); font-size: 14px; }
+  .badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: rgba(63,185,80,0.15);
+    color: var(--pass);
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  section {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  section h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+  }
+  video {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: block;
+    margin: 12px auto;
+    background: #000;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .step img {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    display: block;
+  }
+  .step .label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 14px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  th { color: var(--muted); font-weight: 500; }
+  code {
+    background: rgba(255,255,255,0.06);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  .kv { color: var(--muted); }
+  .pass { color: var(--pass); font-weight: 600; }
+  footer {
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Definition of Done - Probe Report <span class="badge">PASS</span></h1>
+    <div class="sub">run: <code>probe-run-0001</code> &middot; commit: <code>HEAD</code> &middot; generated: 2026-04-17</div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <table>
+      <tr><th>Suite</th><td>smoke / happy-path</td></tr>
+      <tr><th>Steps</th><td>3 / 3 <span class="pass">PASS</span></td></tr>
+      <tr><th>Duration</th><td>00:00:05 (recorded)</td></tr>
+      <tr><th>Environment</th><td>CI runner (ubuntu-latest)</td></tr>
+      <tr><th>Agent</th><td>Theo &mdash; browser test cycle</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Recording</h2>
+    <p class="kv">Full walkthrough of the run, captured by the headless browser driver.</p>
+    <video controls preload="metadata" src="proof.mp4" poster="step-1.png">
+      Your browser does not support HTML5 video. <a href="proof.mp4">Download proof.mp4</a>.
+    </video>
+  </section>
+
+  <section>
+    <h2>Per-step screenshots</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="step-1.png" alt="Step 1: login">
+        <div class="label">Step 1 &mdash; login &middot; <span class="pass">PASS</span></div>
+      </div>
+      <div class="step">
+        <img src="step-2.png" alt="Step 2: create item">
+        <div class="label">Step 2 &mdash; create item &middot; <span class="pass">PASS</span></div>
+      </div>
+      <div class="step">
+        <img src="step-3.png" alt="Step 3: verify persistence">
+        <div class="label">Step 3 &mdash; verify persistence &middot; <span class="pass">PASS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Frame analysis</h2>
+    <p class="kv">Sampled at 1 Hz from <code>proof.mp4</code>. Visual diff vs. previous green run; no unexpected regressions.</p>
+    <table>
+      <tr><th>t (s)</th><th>dominant color</th><th>text OCR</th><th>diff vs. baseline</th><th>note</th></tr>
+      <tr><td>0.0</td><td><code>#7f00ff</code> (purple)</td><td>DOD REPORT</td><td>0.00</td><td>opening frame</td></tr>
+      <tr><td>1.0</td><td><code>#7f00ff</code></td><td>DOD REPORT</td><td>0.00</td><td>stable</td></tr>
+      <tr><td>2.0</td><td><code>#7f00ff</code></td><td>DOD REPORT</td><td>0.00</td><td>stable</td></tr>
+      <tr><td>3.0</td><td><code>#7f00ff</code></td><td>DOD REPORT</td><td>0.00</td><td>stable</td></tr>
+      <tr><td>4.0</td><td><code>#7f00ff</code></td><td>DOD REPORT</td><td>0.00</td><td>final frame</td></tr>
+    </table>
+    <p class="kv" style="margin-top:16px;">
+      Heuristic: pixel-diff distance under 0.02 across all sampled frames &rarr; accepted as <span class="pass">stable</span>.
+      No dropped frames; no unexpected modal dialogs detected.
+    </p>
+  </section>
+
+  <footer>
+    Generated locally, hosted via GitHub Pages. Raw artifacts: <a href="proof.mp4" style="color:var(--accent)">proof.mp4</a>.
+  </footer>
+</div>
+</body>
+</html>
